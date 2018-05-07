@@ -126,38 +126,11 @@ class Tree:
                 node.r = TreeNode(t_list[2*i + 2])
                 self._MakeFromList(node.r, t_list, 2*i + 2)
         return
-
-
-class Solution:
-    def mergeTrees(self, t1, t2):
-        """
-        :type t1: TreeNode
-        :type t2: TreeNode
-        :rtype: TreeNode
-        """
-        if not t1 and not t2: return None
-        ans = TreeNode((t1.val if t1 else 0) + (t2.val if t2 else 0))
-        ans.left = self.mergeTrees(t1 and t1.left, t2 and t2.left)
-        ans.right = self.mergeTrees(t1 and t1.right, t2 and t2.right)
-        return ans
-
             
 
-
-# tree = Tree()
-# a = [3, 0, 5, None, 1, 4]
-# tree.MakeFromList(a)
-# print(tree.getTreeAsList())
-# tree.printTreeLevel()
 t1 = Tree()
-t1.MakeFromList([1,3,2,5])
+t1.MakeFromList([1,3,2,5, None, None, 10, None, 0])
 print(t1.getTreeAsList())
 t1.printTreeLevel()
 
-print()
-t2 = Tree()
-t2.MakeFromList([2,1,3,None,4,None,7])
-print(t2.getTreeAsList())
-t2.printTreeLevel()
-# t2 = Tree().MakeFromList([2,1,3,None,4,None,7])
 
