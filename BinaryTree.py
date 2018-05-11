@@ -71,6 +71,23 @@ class Tree:
             current += 2**i
             print()
 
+    def prettyPrintTree(self):
+        self._prettyPrintTree(self.root)
+
+    def _prettyPrintTree(self, node, prefix="", isLeft=True):
+        if not node:
+            print("Empty Tree")
+            return
+
+        if node.r:
+            self._prettyPrintTree(node.r, prefix + ("│   " if isLeft else "    "), False)
+
+        print(prefix + ("└── " if isLeft else "┌── ") + str(node.v))
+
+        if node.l:
+            self._prettyPrintTree(node.l, prefix + ("    " if isLeft else "│   "), True)
+
+
 
     def getTreeAsList(self):
         size = 0
@@ -132,5 +149,8 @@ t1 = Tree()
 t1.MakeFromList([1,3,2,5, None, None, 10, None, 0])
 print(t1.getTreeAsList())
 t1.printTreeLevel()
+
+t1.prettyPrintTree()
+
 
 
