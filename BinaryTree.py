@@ -146,9 +146,9 @@ class Tree:
             
 
 t1 = Tree()
-t1.MakeFromList([1,3,2,5, None, None, 10, None, 0])
+t1.MakeFromList([1,3,2,5, 44, None, 10, None, 0, None, None, 8, 13])
 print(t1.getTreeAsList())
-t1.printTreeLevel()
+# t1.printTreeLevel()
 
 t1.prettyPrintTree()
 
